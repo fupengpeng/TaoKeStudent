@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/title_bar_activity_height"
+    android:background="@color/theme_color"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingTop="@dimen/title_bar_activity_padding_top">
+
+    <!-- 返回 -->
+    <ImageView
+        android:id="@+id/iv_back"
+        android:layout_width="@dimen/back_icon_width"
+        android:layout_height="@dimen/back_icon_height"
+        android:paddingEnd="@dimen/title_edge_interval"
+        android:paddingStart="@dimen/title_edge_interval"
+        android:src="@drawable/arrow_left_white" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
+
+    <!-- 时间 -->
+    <Chronometer
+        android:id="@+id/chronometer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/title_text_color"
+        android:textSize="@dimen/title_text_size" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
+
+    <!-- 提交 -->
+    <ImageView
+        android:id="@+id/iv_submit"
+        android:layout_width="@dimen/back_icon_width"
+        android:layout_height="@dimen/back_icon_height"
+        android:paddingEnd="@dimen/title_edge_interval"
+        android:paddingStart="@dimen/title_edge_interval"
+        android:src="@drawable/test_submit" />
+
+</LinearLayout>

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+
+		<style>
+			input[type="radio"] {
+				display: none;
+			}
+
+			input[type=checkbox] {
+				display: none;
+			}
+
+			label.icon {
+				padding-left: 20px;
+				padding-right: 10px;
+				padding-top: 1px;
+				padding-bottom: 10px;
+			}
+
+			label.radioA {
+				background: url(file:///android_asset/image/radio_unselected_A.png) no-repeat left top;
+			}
+
+			label.radioB {
+				background: url(file:///android_asset/image/radio_unselected_B.png) no-repeat left top;
+			}
+
+			label.radioC {
+				background: url(file:///android_asset/image/radio_unselected_C.png) no-repeat left top;
+			}
+
+			label.radioD {
+				background: url(file:///android_asset/image/radio_unselected_D.png) no-repeat left top;
+			}
+
+			label.radioE {
+				background: url(file:///android_asset/image/radio_unselected_E.png) no-repeat left top;
+			}
+
+			label.radioAchecked {
+				background: url(file:///android_asset/image/radio_selected_A.png) no-repeat left top;
+			}
+
+			label.radioBchecked {
+				background: url(file:///android_asset/image/radio_selected_B.png) no-repeat left top;
+			}
+
+			label.radioCchecked {
+				background: url(file:///android_asset/image/radio_selected_C.png) no-repeat left top;
+			}
+
+			label.radioDchecked {
+				background: url(file:///android_asset/image/radio_selected_D.png) no-repeat left top;
+			}
+
+			label.radioEchecked {
+				background: url(file:///android_asset/image/radio_selected_E.png) no-repeat left top;
+			}
+
+			label.checkboxA {
+				background: url(file:///android_asset/image/checkbox_unselected_A.png) no-repeat left top;
+			}
+
+			label.checkboxB {
+				background: url(file:///android_asset/image/checkbox_unselected_B.png) no-repeat left top;
+			}
+
+			label.checkboxC {
+				background: url(file:///android_asset/image/checkbox_unselected_C.png) no-repeat left top;
+			}
+
+			label.checkboxD {
+				background: url(file:///android_asset/image/checkbox_unselected_D.png) no-repeat left top;
+			}
+
+			label.checkboxE {
+				background: url(file:///android_asset/image/checkbox_unselected_E.png) no-repeat left top;
+			}
+
+			label.checkboxAchecked {
+				background: url(file:///android_asset/image/checkbox_selected_A.png) no-repeat left top;
+			}
+			label.checkboxBchecked {
+				background: url(file:///android_asset/image/checkbox_selected_B.png) no-repeat left top;
+			}
+			label.checkboxCchecked {
+				background: url(file:///android_asset/image/checkbox_selected_C.png) no-repeat left top;
+			}
+			label.checkboxDchecked {
+				background: url(file:///android_asset/image/checkbox_selected_D.png) no-repeat left top;
+			}
+			label.checkboxEchecked {
+				background: url(file:///android_asset/image/checkbox_selected_E.png) no-repeat left top;
+			}
+		</style>
+
+		<link rel="stylesheet" type="text/css" href="file:///android_asset/themes/style.css">
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({ messageStyle: 'none', tex2jax: {preview: 'none'} });
+		</script>
+		<script type="text/javascript" src="file:///android_asset/MathJax/MathJax.js?config=TeX-MML-AM_SVG">
+		</script>
+
+		<script type="text/javascript">
+			// 答案改变
+			function selectChange() {
+				// 答案
+				var selections = new Array(false, false, false, false, false);
+				// 判断单双选
+				var typeflg = document.getElementById("typeflg");
+				if (typeflg.value == "1") {
+					// 单选
+					// 样式
+					radioChange();
+					// 获取答案
+					var buttons = document.getElementsByName("select_item");
+					for (var i = 0; i < buttons.length; i++) {
+						selections[i] = buttons[i].checked;
+					}
+				} else {
+					// 双选
+					// 样式
+					checkboxChange();
+					// 获取答案
+					var buttons = document.getElementsByName("checkbox_item");
+					for (var i = 0; i < buttons.length; i++) {
+						selections[i] = buttons[i].checked;
+					}
+				}
+				// 向android传回答案
+				choiceQuestionWebView.call(selections);
+			}
+			// 单选题样式改变
+			function radioChange() {
+				// 选项A
+				var radioA = document.getElementById("radioA");
+				var radioA_s = document.getElementById("radioA_s");
+				if (radioA.checked) {
+					radioA_s.removeAttribute('class');
+					radioA_s.setAttribute('class', 'icon radioAchecked');
+				} else {
+					radioA_s.removeAttribute('class');
+					radioA_s.setAttribute('class', 'icon radioA');
+				}
+				// 选项B
+				var radioB = document.getElementById("radioB");
+				var radioB_s = document.getElementById("radioB_s");
+				if (radioB.checked) {
+					radioB_s.removeAttribute('class');
+					radioB_s.setAttribute('class', 'icon radioBchecked');
+				} else {
+					radioB_s.removeAttribute('class');
+					radioB_s.setAttribute('class', 'icon radioB');
+				}
+				// 选项C
+				var radioC = document.getElementById("radioC");
+				var radioC_s = document.getElementById("radioC_s");
+				if (radioC.checked) {
+					radioC_s.removeAttribute('class');
+					radioC_s.setAttribute('class', 'icon radioCchecked');
+				} else {
+					radioC_s.removeAttribute('class');
+					radioC_s.setAttribute('class', 'icon radioC');
+				}
+				// 选项D
+				var radioD = document.getElementById("radioD");
+				var radioD_s = document.getElementById("radioD_s");
+				if (radioD.checked) {
+					radioD_s.removeAttribute('class');
+					radioD_s.setAttribute('class', 'icon radioDchecked');
+				} else {
+					radioD_s.removeAttribute('class');
+					radioD_s.setAttribute('class', 'icon radioD');
+				}
+				// 选项E
+				var radioE = document.getElementById("radioE");
+				var radioE_s = document.getElementById("radioE_s");
+				if (radioE.checked) {
+					radioE_s.removeAttribute('class');
+					radioE_s.setAttribute('class', 'icon radioEchecked');
+				} else {
+					radioE_s.removeAttribute('class');
+					radioE_s.setAttribute('class', 'icon radioE');
+				}
+			}
+			// 多选题样式改变
+			function checkboxChange() {
+				// 选项A
+				var checkboxA = document.getElementById("checkboxA");
+				var checkboxA_s = document.getElementById("checkboxA_s");
+				if (checkboxA.checked) {
+					checkboxA_s.removeAttribute('class');
+					checkboxA_s.setAttribute('class', 'icon checkboxAchecked');
+				} else {
+					checkboxA_s.removeAttribute('class');
+					checkboxA_s.setAttribute('class', 'icon checkboxA');
+				}
+				// 选项B
+				var checkboxB = document.getElementById("checkboxB");
+				var checkboxB_s = document.getElementById("checkboxB_s");
+				if (checkboxB.checked) {
+					checkboxB_s.removeAttribute('class');
+					checkboxB_s.setAttribute('class', 'icon checkboxBchecked');
+				} else {
+					checkboxB_s.removeAttribute('class');
+					checkboxB_s.setAttribute('class', 'icon checkboxB');
+				}
+				// 选项C
+				var checkboxC = document.getElementById("checkboxC");
+				var checkboxC_s = document.getElementById("checkboxC_s");
+				if (checkboxC.checked) {
+					checkboxC_s.removeAttribute('class');
+					checkboxC_s.setAttribute('class', 'icon checkboxCchecked');
+				} else {
+					checkboxC_s.removeAttribute('class');
+					checkboxC_s.setAttribute('class', 'icon checkboxC');
+				}
+				// 选项D
+				var checkboxD = document.getElementById("checkboxD");
+				var checkboxD_s = document.getElementById("checkboxD_s");
+				if (checkboxD.checked) {
+					checkboxD_s.removeAttribute('class');
+					checkboxD_s.setAttribute('class', 'icon checkboxDchecked');
+				} else {
+					checkboxD_s.removeAttribute('class');
+					checkboxD_s.setAttribute('class', 'icon checkboxD');
+				}
+				// 选项E
+				var checkboxE = document.getElementById("checkboxE");
+				var checkboxE_s = document.getElementById("checkboxE_s");
+				if (checkboxE.checked) {
+					checkboxE_s.removeAttribute('class');
+					checkboxE_s.setAttribute('class', 'icon checkboxEchecked');
+				} else {
+					checkboxE_s.removeAttribute('class');
+					checkboxE_s.setAttribute('class', 'icon checkboxE');
+				}
+			}
+			// 页面加载完成
+			function loaded() {
+				// 判断单双选
+				var typeflg = document.getElementById("typeflg");
+				if (typeflg.value == "1") {
+					// 单选, 隐藏多选
+					var icons = document.getElementsByName("checkbox_icon");
+					for (var i = 0; i < icons.length; i++) {
+						icons[i].hidden = true;
+					}
+				} else {
+					// 多选，隐藏单选
+					var icons = document.getElementsByName("radio_icon");
+					for (var i = 0; i < icons.length; i++) {
+						icons[i].hidden = true;
+					}
+				}
+				// 根据选项数隐藏多余选项
+				var itemnum = document.getElementById("itemnum");
+				var tritem1 = document.getElementById("tr_item_1");
+				var tritem2 = document.getElementById("tr_item_2");
+				var tritem3 = document.getElementById("tr_item_3");
+				var tritem4 = document.getElementById("tr_item_4");
+				var tritem5 = document.getElementById("tr_item_5");
+				tritem1.hidden = itemnum.value >= 1 ? false : true;
+				tritem2.hidden = itemnum.value >= 2 ? false : true;
+				tritem3.hidden = itemnum.value >= 3 ? false : true;
+				tritem4.hidden = itemnum.value >= 4 ? false : true;
+				tritem5.hidden = itemnum.value >= 5 ? false : true;
+			}
+		</script>
+
+	</head>
+
+	<body onload="loaded()">
+		<!-- 题干 -->
+		<p>{$question_stem}</p>
+
+		<!-- 选项 -->
+		<table border="0" style="border-collapse:separate; border-spacing:0px 15px;">
+			<!-- A选项 -->
+			<tr id="tr_item_1">
+				<td name="radio_icon">
+					<input type="radio" id="radioA" name="select_item" value="A" onclick="selectChange()" />
+					<label class="icon radioA" id="radioA_s" for="radioA"></label>
+				</td>
+				<td name="checkbox_icon">
+					<input type="checkbox" id="checkboxA" name="checkbox_item" value="A" onclick="selectChange()" />
+					<label class="icon checkboxA" id="checkboxA_s" for="checkboxA"></label>
+				</td>
+				<td>{$question_item1}</td>
+			</tr>
+
+			<!-- B选项 -->
+			<tr id="tr_item_2">
+				<td name="radio_icon">
+					<input type="radio" id="radioB" name="select_item" value="B" onclick="selectChange()" />
+					<label class="icon radioB" id="radioB_s" for="radioB"></label>
+				</td>
+				<td name="checkbox_icon">
+					<input type="checkbox" id="checkboxB" name="checkbox_item" value="B" onclick="selectChange()" />
+					<label class="icon checkboxB" id="checkboxB_s" for="checkboxB"></label>
+				</td>
+				<td>{$question_item2}</td>
+			</tr>
+
+			<!-- C选项 -->
+			<tr id="tr_item_3">
+				<td name="radio_icon">
+					<input type="radio" id="radioC" name="select_item" value="C" onclick="selectChange()" />
+					<label class="icon radioC" id="radioC_s" for="radioC"></label>
+				</td>
+				<td name="checkbox_icon">
+					<input type="checkbox" id="checkboxC" name="checkbox_item" value="C" onclick="selectChange()" />
+					<label class="icon checkboxC" id="checkboxC_s" for="checkboxC"></label>
+				</td>
+				<td>{$question_item3}</td>
+			</tr>
+
+			<!-- D选项 -->
+			<tr id="tr_item_4">
+				<td name="radio_icon">
+					<input type="radio" id="radioD" name="select_item" value="D" onclick="selectChange()" />
+					<label class="icon radioD" id="radioD_s" for="radioD"></label>
+				</td>
+				<td name="checkbox_icon">
+					<input type="checkbox" id="checkboxD" name="checkbox_item" value="D" onclick="selectChange()" />
+					<label class="icon checkboxD" id="checkboxD_s" for="checkboxD"></label>
+				</td>
+				<td>{$question_item4}</td>
+			</tr>
+
+			<!-- E选项 -->
+			<tr id="tr_item_5">
+				<td name="radio_icon">
+					<input type="radio" id="radioE" name="select_item" value="E" onclick="selectChange()" />
+					<label class="icon radioE" id="radioE_s" for="radioE"></label>
+				</td>
+				<td name="checkbox_icon">
+					<input type="checkbox" id="checkboxE" name="checkbox_item" value="E" onclick="selectChange()" />
+					<label class="icon checkboxE" id="checkboxE_s" for="checkboxE"></label>
+				</td>
+				<td>{$question_item5}</td>
+			</tr>
+		</table>
+
+		<!-- 单选/多选  单选：1   多选：2  -->
+		<input type="hidden" id="typeflg" value="{$type_flg}" />
+
+		<!-- 选项数 -->
+		<input type="hidden" id="itemnum" value="{$item_num}" />
+
+	</body>
+
+</html>

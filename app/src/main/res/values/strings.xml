@@ -1,0 +1,162 @@
+<resources>
+    <string name="app_name">91学生版</string>
+
+    <!-- 微课视频 -->
+    <string name="micro_lesson_video">微课视频</string>
+    <!-- 在线做题 -->
+    <string name="online_exercise">在线做题</string>
+    <!-- 作业与考试 -->
+    <string name="assignment_exam">作业与考试</string>
+    <!-- 名师答疑 -->
+    <string name="teacher_answer">名师答疑</string>
+    <!-- 消息 -->
+    <string name="message">消息</string>
+    <!-- 个人中心 -->
+    <string name="personal_center">个人中心</string>
+    <!-- 提示 -->
+    <string name="tip">提示</string>
+    <!-- 确定退出账号? -->
+    <string name="ensure_exit_account">确定退出账号?</string>
+    <!-- 成功退出帐号! -->
+    <string name="exit_account_success">成功退出帐号!</string>
+    <!-- 修改个人信息 -->
+    <string name="update_user_info">修改个人信息</string>
+    <!-- 余额 -->
+    <string name="remaining_balance">您的淘课币余额：</string>
+    <!-- 充值金额 -->
+    <string name="select_recharge_amount">选择充值金额：</string>
+    <!-- 充值金额 -->
+    <string name="pay_method">支付方式：</string>
+    <!-- 绑定账号 -->
+    <string name="bind_account">绑定</string>
+    <!-- 绑定关联账号 -->
+    <string name="bind_connection_account">绑定关联账号</string>
+    <!-- 未绑定关联账号 -->
+    <string name="unbind_account">未绑定关联账号</string>
+    <!-- 解除绑定 -->
+    <string name="relieve_account">解除绑定</string>
+    <!-- 习题微课 -->
+    <string name="micro_exercise">习题微课</string>
+    <!--点击加载更多数据-->
+    <string name="click_load_more_data">点击加载更多数据</string>
+    <!-- 未找到数据 -->
+    <string name="fount_not_data">未找到数据</string>
+    <!-- 筛选知识点 -->
+    <string name="select_knowledge">筛选知识点</string>
+    <!-- 请输入题目数量 -->
+    <string name="input_question_num">请输入题目数量</string>
+    <!-- 题目数量不能大于20 -->
+    <string name="question_num_max_20">题目数量不能大于20</string>
+    <!-- 题目数量不能小于1 -->
+    <string name="question_num_min_1">题目数量不能小于1</string>
+
+    <!-- 登录 -->
+    <string name="login">登录</string>
+    <!-- 注册 -->
+    <string name="register">注册</string>
+    <!-- 注册账号 -->
+    <string name="register_account">注册账号</string>
+    <!-- 请输入账号 -->
+    <string name="input_account">注册邮箱/会员号/手机号</string>
+    <!-- 请输入密码 -->
+    <string name="input_password">登录密码</string>
+    <string name="input_confirm_password">确认密码</string>
+    <!--请输入手机号-->
+    <string name="input_phone">手机号</string>
+    <!-- 验证码 -->
+    <string name="input_validate_code">验证码</string>
+    <!-- 我已阅读并接受 -->
+    <string name="read_and_agree">我已阅读并接受</string>
+    <!--《91淘课注册条款》-->
+    <string name="term_91">《91淘课注册条款》</string>
+    <!-- 下一步 -->
+    <string name="next">下一步</string>
+    <!-- 筛选课程 -->
+    <string name="select_lesson">筛选课程</string>
+    <!-- 个人中心 -->
+    <string name="user_info">个人信息</string>
+    <!--淘课币-->
+    <string name="cash">淘课币</string>
+    <!-- 关联账号 -->
+    <string name="connection_account">关联账号</string>
+    <!-- 退出账号 -->
+    <string name="exit_account">退出账号</string>
+    <!-- 修改密码 -->
+    <string name="update_password">修改密码</string>
+    <!-- 头像 -->
+    <string name="head_image">头像</string>
+    <!-- 昵称 -->
+    <string name="nickname">昵称</string>
+    <!-- 真实姓名 -->
+    <string name="realname">真实姓名</string>
+    <!-- 性别 -->
+    <string name="sex">性别</string>
+    <!-- 年级 -->
+    <string name="nianji">年级</string>
+    <!-- 男 -->
+    <string name="male">男</string>
+    <!-- 女 -->
+    <string name="female">女</string>
+    <!-- 确认 -->
+    <string name="ensure">确认</string>
+    <!-- 原密码 -->
+    <string name="old_password">原密码</string>
+    <!-- 新密码 -->
+    <string name="new_password">新密码</string>
+    <!-- 充值 -->
+    <string name="recharge">充值</string>
+    <!-- 视频详情 -->
+    <string name="video_detail">视频详情</string>
+    <!-- 购买 -->
+    <string name="buy">购买</string>
+    <!-- 已购买 -->
+    <string name="buyed">已购买</string>
+    <!-- 下载 -->
+    <string name="download">下载</string>
+    <!-- 我的下载 -->
+    <string name="my_download">我的下载</string>
+    <!-- 我的课程 -->
+    <string name="my_lesson">我的课程</string>
+
+
+    <!-- 注册时手机号不能为空 -->
+    <string name="phone_number_empty">请输入手机号</string>
+    <!-- 注册时手机号格式不正确 -->
+    <string name="phone_number_format_error">请输入正确的手机号</string>
+    <!-- 注册时两次密码不一致 -->
+    <string name="password_inconformity">两次密码不一致</string>
+    <!-- 注册时验证码错误 -->
+    <string name="validate_code_inconformity">请输入正确的验证码</string>
+
+    <!-- 没有更多数据 -->
+    <string name="no_more_data">没有更多数据</string>
+
+    <string-array name="sp_nj">
+        <item>高一</item>
+        <item>高二</item>
+        <item>高三</item>
+        <item>初一</item>
+        <item>初二</item>
+        <item>初三</item>
+    </string-array>
+
+    <string-array name="sp_recharge">
+        <item>50</item>
+        <item>80</item>
+        <item>充100元赠20元（充值特惠活动）</item>
+        <item>充200元赠60元（充值特惠活动）</item>
+        <item>充300元赠100元（充值特惠活动）</item>
+        <item>充500元赠200元（充值特惠活动）</item>
+        <item>充1000元赠400元（充值特惠活动）</item>
+    </string-array>
+    <string-array name="sp_recharge_value">
+        <item>50</item>
+        <item>80</item>
+        <item>100</item>
+        <item>200</item>
+        <item>300</item>
+        <item>500</item>
+        <item>1000</item>
+    </string-array>
+
+</resources>

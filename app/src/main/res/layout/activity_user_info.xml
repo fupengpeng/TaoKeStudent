@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_user_info"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/theme_bg_color"
+    android:orientation="vertical">
+
+    <!-- 标题栏 -->
+    <include layout="@layout/title_activity" />
+
+    <!-- 个人信息 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- 头像 -->
+        <LinearLayout
+            android:id="@+id/ll_user_info_photo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/sub_item_bg_color"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/title_edge_interval"
+            android:paddingEnd="@dimen/title_edge_interval"
+            android:paddingStart="@dimen/navigation_icon_margin_start"
+            android:paddingTop="@dimen/title_edge_interval">
+
+            <TextView
+                style="@style/UserInfoItemTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/head_image" />
+
+            <com.taoke.taokestudent.customerview.CircleImageView
+                android:id="@+id/civ_user_info_photo"
+                android:layout_width="@dimen/user_head_image_size"
+                android:layout_height="@dimen/user_head_image_size" />
+
+            <ImageView
+                android:layout_width="@dimen/right_arrow_size"
+                android:layout_height="@dimen/right_arrow_size"
+                android:layout_marginLeft="@dimen/title_edge_interval"
+                android:src="@drawable/arrow_right_black_444" />
+
+        </LinearLayout>
+
+        <!-- 间隔线 -->
+        <TextView
+            android:background="@color/split_line_color"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/sub_item_split_line_height" />
+
+        <!-- 昵称 -->
+        <LinearLayout
+            android:id="@+id/ll_nickname"
+            style="@style/UserInfoItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                style="@style/UserInfoItemTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/nickname" />
+
+            <TextView
+                android:id="@+id/tv_user_info_nickname"
+                style="@style/UserInfoItemTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:layout_width="@dimen/right_arrow_size"
+                android:layout_height="@dimen/right_arrow_size"
+                android:layout_marginLeft="@dimen/title_edge_interval"
+                android:src="@drawable/arrow_right_black_444" />
+
+        </LinearLayout>
+
+        <!-- 间隔线 -->
+        <TextView
+            android:background="@color/split_line_color"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/sub_item_split_line_height" />
+
+        <!-- 真实姓名 -->
+        <LinearLayout
+            android:id="@+id/ll_realname"
+            style="@style/UserInfoItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                style="@style/UserInfoItemTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/realname" />
+
+            <TextView
+                android:id="@+id/tv_user_info_realname"
+                style="@style/UserInfoItemTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:layout_width="@dimen/right_arrow_size"
+                android:layout_height="@dimen/right_arrow_size"
+                android:layout_marginLeft="@dimen/title_edge_interval"
+                android:src="@drawable/arrow_right_black_444" />
+
+        </LinearLayout>
+
+        <!-- 间隔线 -->
+        <TextView
+            android:background="@color/split_line_color"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/sub_item_split_line_height" />
+
+        <!-- 性别 -->
+        <LinearLayout
+            android:id="@+id/ll_sex"
+            style="@style/UserInfoItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                style="@style/UserInfoItemTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/sex" />
+
+            <TextView
+                android:id="@+id/tv_user_info_sex"
+                style="@style/UserInfoItemTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:layout_width="@dimen/right_arrow_size"
+                android:layout_height="@dimen/right_arrow_size"
+                android:layout_marginLeft="@dimen/title_edge_interval"
+                android:src="@drawable/arrow_right_black_444" />
+
+        </LinearLayout>
+
+        <!-- 间隔线 -->
+        <TextView
+            android:background="@color/split_line_color"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/sub_item_split_line_height" />
+
+        <!-- 年级 -->
+        <LinearLayout
+            android:id="@+id/ll_nianji"
+            style="@style/UserInfoItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textView"
+                style="@style/UserInfoItemTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/nianji" />
+
+            <TextView
+                android:id="@+id/tv_user_info_nianji"
+                style="@style/UserInfoItemTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:layout_width="@dimen/right_arrow_size"
+                android:layout_height="@dimen/right_arrow_size"
+                android:layout_marginLeft="@dimen/title_edge_interval"
+                android:src="@drawable/arrow_right_black_444" />
+
+        </LinearLayout>
+
+        <!-- 修改密码 -->
+        <LinearLayout
+            android:layout_marginTop="@dimen/sub_item_interval"
+            android:id="@+id/ll_update_password"
+            style="@style/UserInfoItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                style="@style/UserInfoItemTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/update_password" />
+
+            <ImageView
+                android:layout_width="@dimen/right_arrow_size"
+                android:layout_height="@dimen/right_arrow_size"
+                android:layout_marginLeft="@dimen/title_edge_interval"
+                android:src="@drawable/arrow_right_black_444" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/sub_item_bg_color">
+
+    <!-- 做题区域 -->
+    <LinearLayout
+        android:id="@+id/ll_test_area"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- 标题 -->
+        <include layout="@layout/title_online_exercise_test" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!-- 进度 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <SeekBar
+                    android:id="@+id/sb_text_progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:maxHeight="2dp"
+                    android:minHeight="2dp"
+                    android:progressDrawable="@drawable/progressbar"
+                    android:thumb="@drawable/seekbar_dot" />
+
+                <TextView
+                    android:id="@+id/tv_progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:text="2/5"
+                    android:textSize="17sp" />
+
+            </LinearLayout>
+
+            <!-- 试题 -->
+            <android.support.v4.view.ViewPager
+                android:id="@+id/vp_question_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <!-- 导航 -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp">
+
+                <ImageView
+                    android:id="@+id/iv_pre_question"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/pre_question" />
+
+                <TextView
+                    android:id="@+id/tv_choice_question"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/bg_cicle"
+                    android:gravity="center"
+                    android:text="题目"
+                    android:textColor="#ffffff"
+                    android:textSize="17sp" />
+
+                <ImageView
+                    android:id="@+id/iv_next_question"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/next_question" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- 选择题目区域 -->
+    <LinearLayout
+        android:id="@+id/ll_choice_area"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tv_space"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/transparent" />
+
+        <RelativeLayout
+            android:id="@+id/rl_hide_choice_area"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#3321a675">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="20dp"
+                android:layout_centerInParent="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/arrow_double_down" />
+        </RelativeLayout>
+
+        <GridView
+            android:paddingTop="10dp"
+            android:id="@+id/gv_choice_question"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            android:background="#ffffff"
+            android:numColumns="5" />
+
+        <TextView
+            android:id="@+id/tv_submit"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height"
+            android:background="@color/theme_color"
+            android:gravity="center"
+            android:text="交卷"
+            android:textColor="@color/title_text_color"
+            android:textSize="@dimen/button_text_size" />
+    </LinearLayout>
+
+</RelativeLayout>

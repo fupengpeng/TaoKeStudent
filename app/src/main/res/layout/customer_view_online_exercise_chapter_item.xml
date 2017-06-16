@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/sub_item_bg_color"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_customer_view_chapter_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="20dp"
+        android:textColor="@color/sub_item_text_color"
+        android:textSize="18sp" />
+
+    <com.taoke.taokestudent.customerview.MyGridView
+        android:id="@+id/gv_customer_view_chapter_child_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:numColumns="2" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/sub_item_split_line_height"
+        android:background="@color/split_line_color" />
+
+
+</LinearLayout>

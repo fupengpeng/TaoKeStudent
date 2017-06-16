@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+
+		<link rel="stylesheet" type="text/css" href="file:///android_asset/themes/style.css">
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({ messageStyle: 'none', tex2jax: {preview: 'none'} });
+		</script>
+		<script type="text/javascript" src="file:///android_asset/MathJax/MathJax.js?config=TeX-MML-AM_SVG">
+		</script>
+	</head>
+
+	<body>
+		<!-- 题干 -->
+		<p>{$question_topic}</p>
+	</body>
+
+</html>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- 图片 -->
+    <ImageView
+        android:id="@+id/iv_micro_lesson_video_image"
+        android:layout_width="130dp"
+        android:scaleType="fitXY"
+        android:layout_height="80dp" />
+
+    <LinearLayout
+        android:layout_marginStart="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_alignBottom="@+id/iv_micro_lesson_video_image"
+        android:layout_alignTop="@+id/iv_micro_lesson_video_image"
+        android:layout_toRightOf="@+id/iv_micro_lesson_video_image"
+        android:orientation="vertical">
+        <!-- 名称 -->
+        <TextView
+            android:id="@+id/tv_micro_lesson_video_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:text="高中语文"
+            android:textColor="#444444"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+            <!-- 价格 -->
+            <TextView
+                android:id="@+id/tv_micro_lesson_video_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="￥60.0"
+                android:textColor="@color/theme_color"
+                android:textSize="13sp" />
+
+            <!-- 分割线 -->
+            <TextView
+                android:id="@+id/tv_micro_lesson_video_split"
+                android:layout_width="2dp"
+                android:layout_height="12dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="20dp"
+                android:background="#fba149" />
+
+            <!-- 小节数 -->
+            <TextView
+                android:id="@+id/tv_micro_lesson_video_clanum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="共28讲"
+                android:textColor="#444444"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <!-- 购买 -->
+        <TextView
+            android:id="@+id/tv_micro_lesson_video_buy"
+            android:layout_width="60dp"
+            android:layout_height="20dp"
+            android:layout_marginBottom="5dp"
+            android:gravity="center"
+            android:text="购买"
+            android:textColor="#FFFFFF"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+</RelativeLayout>

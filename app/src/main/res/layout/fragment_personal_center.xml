@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/theme_bg_color"
+    android:orientation="vertical">
+
+    <!-- 头信息 -->
+    <LinearLayout
+        android:id="@+id/ll_personal_center_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/theme_color"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/personal_center_head_area_padding_bottom"
+        android:paddingStart="@dimen/navigation_icon_margin_start"
+        android:paddingTop="@dimen/personal_center_head_area_padding_top">
+
+        <com.taoke.taokestudent.customerview.CircleImageView
+            android:id="@+id/civ_personal_center_user_image"
+            android:layout_width="@dimen/user_head_image_size"
+            android:layout_height="@dimen/user_head_image_size"
+            android:src="@drawable/user_unlogin" />
+
+        <TextView
+            android:id="@+id/tv_personal_center_name"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/title_content_interval"
+            android:gravity="center_vertical"
+            android:textColor="@color/title_text_color"
+            android:textSize="@dimen/title_text_size" />
+
+    </LinearLayout>
+
+    <!-- 钱包相关 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/sub_item_interval"
+        android:orientation="vertical">
+
+        <!-- 淘课币 -->
+        <LinearLayout
+            android:id="@+id/ll_recharge"
+            style="@style/SubItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="@dimen/navigation_icon_size"
+                android:layout_height="@dimen/navigation_icon_size"
+                android:src="@drawable/gold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/title_content_interval"
+                android:layout_weight="1"
+                android:text="@string/cash"
+                android:textColor="@color/sub_item_text_color"
+                android:textSize="@dimen/sub_item_text_size" />
+
+            <TextView
+                android:id="@+id/tv_cash"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/sub_item_text_color"
+                android:textSize="@dimen/sub_item_text_size" />
+
+            <ImageView
+                android:layout_width="@dimen/right_arrow_size"
+                android:layout_height="@dimen/right_arrow_size"
+                android:layout_marginLeft="@dimen/title_edge_interval"
+                android:src="@drawable/arrow_right_black_444" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- 家长账号 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/sub_item_interval"
+        android:orientation="vertical">
+
+        <!-- 家长账号 -->
+        <LinearLayout
+            android:id="@+id/ll_connection_account"
+            style="@style/SubItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="@dimen/navigation_icon_size"
+                android:layout_height="@dimen/navigation_icon_size"
+                android:src="@drawable/farmly" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/title_content_interval"
+                android:layout_weight="1"
+                android:text="@string/connection_account"
+                android:textColor="@color/sub_item_text_color"
+                android:textSize="@dimen/sub_item_text_size" />
+
+            <ImageView
+                android:layout_width="@dimen/right_arrow_size"
+                android:layout_height="@dimen/right_arrow_size"
+                android:layout_marginLeft="@dimen/title_content_interval"
+                android:src="@drawable/arrow_right_black_444" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- 账号 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/sub_item_interval"
+        android:orientation="vertical">
+
+        <!-- 退出账号 -->
+        <LinearLayout
+            android:id="@+id/ll_exit_account"
+            style="@style/SubItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="@dimen/navigation_icon_size"
+                android:layout_height="@dimen/navigation_icon_size"
+                android:src="@drawable/exit" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/title_content_interval"
+                android:layout_weight="1"
+                android:text="@string/exit_account"
+                android:textColor="@color/sub_item_text_color"
+                android:textSize="@dimen/sub_item_text_size" />
+
+            <ImageView
+                android:layout_width="@dimen/right_arrow_size"
+                android:layout_height="@dimen/right_arrow_size"
+                android:layout_marginLeft="@dimen/title_content_interval"
+                android:src="@drawable/arrow_right_black_444" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

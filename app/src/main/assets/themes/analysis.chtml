@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+
+		<style>
+        	img{
+        	  	padding-left: 0px;
+        	  	padding-right: 10px;
+        	  	padding-top:2px;
+        	}
+        </style>
+
+		<link rel="stylesheet" type="text/css" href="file:///android_asset/themes/style.css">
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({ messageStyle: 'none', tex2jax: {preview: 'none'} });
+		</script>
+		<script type="text/javascript" src="file:///android_asset/MathJax/MathJax.js?config=TeX-MML-AM_SVG">
+		</script>
+
+		<script type="text/javascript">
+			function loaded(){
+
+				// 判断每个选项要显示的icon
+				// 1：未选择   2：用户的选择  3：正确答案
+				var iconA = 1;
+				var iconB = 1;
+				var iconC = 1;
+				var iconD = 1;
+				var iconE = 1;
+
+				// 判断第A项
+				var userselectedA = document.getElementById("userselectedA")
+				var correctA = document.getElementById("correctA")
+				if(userselectedA.value == 1){
+					iconA = 2;
+				}
+				if(correctA.value == 1){
+					iconA = 3;
+				}
+
+				// 判断第B项
+				var userselectedB = document.getElementById("userselectedB")
+				var correctB = document.getElementById("correctB")
+				if(userselectedB.value == 1){
+					iconB = 2;
+				}
+				if(correctB.value == 1){
+					iconB = 3;
+				}
+
+				// 判断第C项
+				var userselectedC = document.getElementById("userselectedC")
+				var correctC = document.getElementById("correctC")
+				if(userselectedC.value == 1){
+					iconC = 2;
+				}
+				if(correctC.value == 1){
+					iconC = 3;
+				}
+
+				// 判断第D项
+				var userselectedD = document.getElementById("userselectedD")
+				var correctD = document.getElementById("correctD")
+				if(userselectedD.value == 1){
+					iconD = 2;
+				}
+				if(correctD.value == 1){
+					iconD = 3;
+				}
+
+				// 判断第E项
+				var userselectedE = document.getElementById("userselectedE")
+				var correctE = document.getElementById("correctE")
+				if(userselectedE.value == 1){
+					iconE = 2;
+				}
+				if(correctE.value == 1){
+					iconE = 3;
+				}
+
+				// 单双选
+				var typeflg = document.getElementById("typeflg");
+				if(typeflg.value == 1){
+					// 单选
+					// 第1项
+					var icon1 = document.getElementById("icon_1");
+					if(iconA == 1){
+						icon1.src = "file:///android_asset/analysisimage/analysis_radio_unselected_A.png";
+					} else if(iconA == 2){
+						icon1.src = "file:///android_asset/analysisimage/analysis_radio_error_A.png";
+					} else if(iconA == 3){
+						icon1.src = "file:///android_asset/analysisimage/analysis_radio_correct_A.png";
+					}
+
+					// 第2项
+					var icon2 = document.getElementById("icon_2");
+					if(iconB == 1){
+						icon2.src = "file:///android_asset/analysisimage/analysis_radio_unselected_B.png";
+					} else if(iconB == 2){
+						icon2.src = "file:///android_asset/analysisimage/analysis_radio_error_B.png";
+					} else if(iconB == 3){
+						icon2.src = "file:///android_asset/analysisimage/analysis_radio_correct_B.png";
+					}
+
+					// 第3项
+					var icon3 = document.getElementById("icon_3");
+					if(iconC == 1){
+						icon3.src = "file:///android_asset/analysisimage/analysis_radio_unselected_C.png";
+					} else if(iconC == 2){
+						icon3.src = "file:///android_asset/analysisimage/analysis_radio_error_C.png";
+					} else if(iconC == 3){
+						icon3.src = "file:///android_asset/analysisimage/analysis_radio_correct_C.png";
+					}
+
+					// 第4项
+					var icon4 = document.getElementById("icon_4");
+					if(iconD == 1){
+						icon4.src = "file:///android_asset/analysisimage/analysis_radio_unselected_D.png";
+					} else if(iconD == 2){
+						icon4.src = "file:///android_asset/analysisimage/analysis_radio_error_D.png";
+					} else if(iconD == 3){
+						icon4.src = "file:///android_asset/analysisimage/analysis_radio_correct_D.png";
+					}
+
+					// 第5项
+					var icon5 = document.getElementById("icon_5");
+					if(iconE == 1){
+						icon5.src = "file:///android_asset/analysisimage/analysis_radio_unselected_E.png";
+					} else if(iconE == 2){
+						icon5.src = "file:///android_asset/analysisimage/analysis_radio_error_E.png";
+					} else if(iconE == 3){
+						icon5.src = "file:///android_asset/analysisimage/analysis_radio_correct_E.png";
+					}
+				} else{
+					// 双选
+					// 第1项
+					var icon1 = document.getElementById("icon_1");
+					if(iconA == 1){
+						icon1.src = "file:///android_asset/analysisimage/analysis_checkbox_unselected_A.png";
+					} else if(iconA == 2){
+						icon1.src = "file:///android_asset/analysisimage/analysis_checkbox_error_A.png";
+					} else if(iconA == 3){
+						icon1.src = "file:///android_asset/analysisimage/analysis_checkbox_correct_A.png";
+					}
+
+					// 第2项
+					var icon2 = document.getElementById("icon_2");
+					if(iconB == 1){
+						icon2.src = "file:///android_asset/analysisimage/analysis_checkbox_unselected_B.png";
+					} else if(iconB == 2){
+						icon2.src = "file:///android_asset/analysisimage/analysis_checkbox_error_B.png";
+					} else if(iconB == 3){
+						icon2.src = "file:///android_asset/analysisimage/analysis_checkbox_correct_B.png";
+					}
+
+					// 第3项
+					var icon3 = document.getElementById("icon_3");
+					if(iconC == 1){
+						icon3.src = "file:///android_asset/analysisimage/analysis_checkbox_unselected_C.png";
+					} else if(iconC == 2){
+						icon3.src = "file:///android_asset/analysisimage/analysis_checkbox_error_C.png";
+					} else if(iconC == 3){
+						icon3.src = "file:///android_asset/analysisimage/analysis_checkbox_correct_C.png";
+					}
+
+					// 第4项
+					var icon4 = document.getElementById("icon_4");
+					if(iconD == 1){
+						icon4.src = "file:///android_asset/analysisimage/analysis_checkbox_unselected_D.png";
+					} else if(iconD == 2){
+						icon4.src = "file:///android_asset/analysisimage/analysis_checkbox_error_D.png";
+					} else if(iconD == 3){
+						icon4.src = "file:///android_asset/analysisimage/analysis_checkbox_correct_D.png";
+					}
+
+					// 第5项
+					var icon5 = document.getElementById("icon_5");
+					if(iconE == 1){
+						icon5.src = "file:///android_asset/analysisimage/analysis_checkbox_unselected_E.png";
+					} else if(iconE == 2){
+						icon5.src = "file:///android_asset/analysisimage/analysis_checkbox_error_E.png";
+					} else if(iconE == 3){
+						icon5.src = "file:///android_asset/analysisimage/analysis_checkbox_correct_E.png";
+					}
+				}
+
+				// 根据选项数隐藏多余选项
+				var itemnum = document.getElementById("itemnum");
+				var tritem1 = document.getElementById("tr_item_1");
+				var tritem2 = document.getElementById("tr_item_2");
+				var tritem3 = document.getElementById("tr_item_3");
+				var tritem4 = document.getElementById("tr_item_4");
+				var tritem5 = document.getElementById("tr_item_5");
+				tritem1.hidden = itemnum.value >= 1 ? false : true;
+				tritem2.hidden = itemnum.value >= 2 ? false : true;
+				tritem3.hidden = itemnum.value >= 3 ? false : true;
+				tritem4.hidden = itemnum.value >= 4 ? false : true;
+				tritem5.hidden = itemnum.value >= 5 ? false : true;
+
+			}
+
+		</script>
+
+	</head>
+
+	<body onload="loaded()">
+		<!-- 题干 -->
+		<p>{$question_stem}</p>
+
+		<!-- 选项 -->
+		<table border="0" style="border-collapse:separate; border-spacing:0px 15px;">
+			<!-- A选项 -->
+			<tr id="tr_item_1">
+				<td>
+					<img id="icon_1" src="analysisimage/analysis_radio_unselected_A.png"/>
+				</td>
+				<td>{$question_item1}</td>
+			</tr>
+
+			<!-- B选项 -->
+			<tr id="tr_item_2">
+				<td>
+					<img id="icon_2" src="analysisimage/analysis_radio_unselected_B.png"/>
+				</td>
+				<td>{$question_item2}</td>
+			</tr>
+
+			<!-- C选项 -->
+			<tr id="tr_item_3">
+				<td>
+					<img id="icon_3" src="analysisimage/analysis_radio_unselected_C.png"/>
+				</td>
+				<td>{$question_item3}</td>
+			</tr>
+
+			<!-- D选项 -->
+			<tr id="tr_item_4">
+				<td>
+					<img id="icon_4" src="analysisimage/analysis_radio_unselected_D.png"/>
+				</td>
+				<td>{$question_item4}</td>
+			</tr>
+
+			<!-- E选项 -->
+			<tr id="tr_item_5">
+				<td>
+					<img id="icon_5" src="analysisimage/analysis_radio_unselected_E.png"/>
+				</td>
+				<td>{$question_item5}</td>
+			</tr>
+		</table>
+
+		<!-- 单选/多选  单选：1   多选：2  -->
+		<input type="hidden" id="typeflg" value="{$type_flg}" />
+
+		<!-- 选项数 -->
+		<input type="hidden" id="itemnum" value="{$item_num}" />
+
+		<!-- 选择    1：选择   0：未选择 -->
+		<!-- 用户选择的答案 -->
+		<input type="hidden" id="userselectedA" value="{$user_selected1}" />
+		<input type="hidden" id="userselectedB" value="{$user_selected2}" />
+		<input type="hidden" id="userselectedC" value="{$user_selected3}" />
+		<input type="hidden" id="userselectedD" value="{$user_selected4}" />
+		<input type="hidden" id="userselectedE" value="{$user_selected5}" />
+
+		<!-- 正确答案 -->
+		<input type="hidden" id="correctA" value="{$correct1}" />
+		<input type="hidden" id="correctB" value="{$correct2}" />
+		<input type="hidden" id="correctC" value="{$correct3}" />
+		<input type="hidden" id="correctD" value="{$correct4}" />
+		<input type="hidden" id="correctE" value="{$correct5}" />
+
+	</body>
+
+</html>

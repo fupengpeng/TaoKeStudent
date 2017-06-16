@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_online_exercise_chapter"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/theme_bg_color"
+    android:orientation="vertical">
+
+    <!-- 标题 -->
+    <include layout="@layout/title_activity" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ListView
+            android:id="@+id/lv_online_chapter_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/sub_item_bg_color"
+            android:divider="@null"
+            android:scrollbars="none" />
+
+        <TextView
+            android:id="@+id/tv_data_empty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/fount_not_data"
+            android:visibility="gone" />
+
+        <!-- 开始答题按钮 -->
+        <TextView
+            android:id="@+id/tv_start_answer"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height"
+            android:layout_alignParentBottom="true"
+            android:background="@color/theme_color"
+            android:gravity="center"
+            android:text="开始答题"
+            android:textColor="@color/title_text_color"
+            android:textSize="@dimen/button_text_size" />
+    </RelativeLayout>
+
+</LinearLayout>

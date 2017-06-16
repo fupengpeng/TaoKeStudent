@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_micro2_exercise_chapter"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- 标题栏 -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_bar_activity_height"
+        android:background="@color/theme_color"
+        android:gravity="center_vertical"
+        android:paddingTop="@dimen/title_bar_activity_padding_top">
+
+        <!-- 返回 -->
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="@dimen/back_icon_width"
+            android:layout_height="@dimen/back_icon_height"
+            android:layout_centerVertical="true"
+            android:paddingEnd="@dimen/title_edge_interval"
+            android:paddingStart="@dimen/title_edge_interval"
+            android:src="@drawable/arrow_left_white" />
+
+        <!-- 标题 -->
+        <TextView
+            android:id="@+id/tv_title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:singleLine="true"
+            android:textColor="@color/title_text_color"
+            android:textSize="@dimen/title_text_size" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ececec">
+
+        <ExpandableListView
+            android:id="@+id/lv_micro_exercise_chapter_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/ll_load_more"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:divider="@null"
+            android:scrollbars="none" />
+
+        <TextView
+            android:id="@+id/tv_data_empty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="未找到数据"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+</LinearLayout>

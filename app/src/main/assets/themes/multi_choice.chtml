@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="file:///android_asset/themes/style.css">
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({ messageStyle: 'none', tex2jax: {preview: 'none'} });
+		</script>
+		<script type="text/javascript" src="file:///android_asset/MathJax/MathJax.js?config=TeX-MML-AM_SVG">
+		</script>
+
+		<style>
+        		* {
+        			margin:0px;
+        			padding:0px;
+        		}
+
+        		.xzt {
+        			padding:0px 10px;
+        			float:left;
+        			margin-top:10px;
+        			margin-left:10px;
+        		}
+        		.xzt h3 {
+        			width:100%;
+        			line-height:30px;
+        			margin-bottom: 10px;
+        		}
+
+        		td {
+        			font-size:16px;
+        		}
+
+        		span {
+        			display:block;
+        			width:18px;
+        			height:18px;
+        			text-align:center;
+        			line-height:17px;
+        			margin-right:10px;
+        			border:1px solid #000;
+        			font-size:16px;
+        			cursor:pointer;
+        			border-radius:0;
+        		}
+
+        		span.on {
+        			background:#21a675;
+        			color:#fff;
+        		}
+        </style>
+
+	</head>
+
+	<body class="xzt">
+    	<h3><font color="#21A675">[多选题]</font>{$question_stem}</h3>
+
+    	<!-- 选项 -->
+    	<table border="0" style="border-collapse:separate; border-spacing:0px 15px;" >
+    		<!-- A选项 -->
+    		<tr><td><span>A</span></td><td>{$question_item1}</td></tr>
+
+    		<!-- B选项 -->
+    		<tr><td><span>B</span></td><td>{$question_item2}</td></tr>
+
+    		<!-- C选项 -->
+    		<tr><td><span>C</span></td><td>{$question_item3}</td></tr>
+
+    		<!-- D选项 -->
+    		<tr><td><span>D</span></td><td>{$question_item4}</td></tr>
+    	</table>
+
+    	<input type="hidden" id="answer" value="{$question_answer}" />
+
+    	<script>
+    		// 控制多选
+    		var duoText = [];
+    		var item = document.getElementsByTagName("tr");
+    		var xuanxiang = document.getElementsByTagName("span");
+    		var len = xuanxiang.length;
+    		for(var i=0;i<len;i++){
+    			item[i].onclick = function(){
+    				var xx = this.cells[0].children[0];
+    				if(xx.getAttribute("class") == "on"){
+    					xx.setAttribute("class","");
+    					var removeText = xx.innerHTML;
+    					var duoTextLen = duoText.length;
+    					for(var i=0;i<duoTextLen;i++){
+    						if(duoText[i] == removeText){
+    							duoText.splice(i,1);
+    						}
+    					}
+    				}else{
+    					xx.setAttribute("class","on");
+    					var text = xx.innerHTML;
+    					duoText.push(text);
+    				}
+
+    				duoText.sort();
+                    var duoTextLen = duoText.length;
+                    var returnText = "";
+                    for(var i=0;i<duoTextLen;i++){
+                    	returnText=returnText+duoText[i];
+                    }
+                    // 向android传回答案
+                    choiceQuestionWebView.call(returnText);
+    			}
+    		}
+
+
+    		// 控制默认选中
+    		var answer = document.getElementById("answer");
+    		var answerText = answer.getAttribute("value");
+    		var answerString = answerText.toString();
+    		var answerAray = [];
+    		for(var i=0;i<answerString.length;i++){
+    			answerAray.push(answerString[i]);
+    		}
+    		for(var j=0;j<answerAray.length;j++){
+    			for(var k=0;k<len;k++){
+    				var isAnswer = xuanxiang[k].innerHTML;
+    				if(isAnswer == answerAray[j]){
+    					duoText.push(isAnswer);
+    					xuanxiang[k].setAttribute("class","on");
+    				}
+    			}
+    		}
+    	</script>
+    </body>
+ </html>

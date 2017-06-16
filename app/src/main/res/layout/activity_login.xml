@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_login"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/theme_bg_color"
+    android:orientation="vertical"
+    tools:context="com.taoke.taokestudent.activity.personalcenter.LoginActivity">
+
+    <!-- 标题栏 -->
+    <include layout="@layout/title_activity"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/account_info_interval"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical">
+
+        <!-- 用户信息 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/login_view_user_info_height"
+            android:background="@drawable/bg_registe_bottom_part"
+            android:orientation="vertical"
+            android:paddingEnd="@dimen/account_info_interval"
+            android:paddingStart="@dimen/account_info_interval">
+
+            <!-- 账号 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/account_icon_size"
+                    android:layout_height="@dimen/account_icon_size"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_registe_username" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/account_info_interval"
+                    android:orientation="vertical">
+
+                    <com.taoke.taokestudent.customerview.ClearEditText
+                        android:id="@+id/cet_login_account"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:hint="@string/input_account"
+                        android:singleLine="true" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/line_seperate" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!--密码 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/account_icon_size"
+                    android:layout_height="@dimen/account_icon_size"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_registe_password" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/account_info_interval"
+                    android:orientation="vertical">
+
+                    <com.taoke.taokestudent.customerview.ClearEditText
+                        android:id="@+id/cet_login_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:hint="@string/input_password"
+                        android:inputType="textPassword"
+                        android:singleLine="true" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- 登录按钮 -->
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginTop="@dimen/button_margin_top"
+            android:background="@drawable/bg_btn_unable"
+            android:enabled="false"
+            android:text="@string/login"
+            android:textColor="@color/title_text_color"
+            android:textSize="@dimen/button_text_size" />
+
+        <TextView
+            android:id="@+id/tv_login_register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:padding="@dimen/account_info_interval"
+            android:text="@string/register_account"
+            android:textColor="@color/theme_color"
+            android:textSize="@dimen/login_view_register_text_size" />
+
+    </LinearLayout>
+
+</LinearLayout>

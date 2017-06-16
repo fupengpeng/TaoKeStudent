@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_update_user_info"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/theme_bg_color"
+    android:orientation="vertical">
+
+    <!-- 标题栏 -->
+    <include layout="@layout/title_activity" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical"
+        android:padding="@dimen/account_info_interval">
+
+        <!-- 昵称 -->
+        <LinearLayout
+            android:id="@+id/ll_update_nickname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/nickname"
+                android:textColor="@color/update_user_info_title_color"
+                android:textSize="@dimen/update_user_info_text_size" />
+
+            <EditText
+                android:id="@+id/et_nickname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/update_user_info_content_color"
+                android:textSize="@dimen/update_user_info_text_size" />
+        </LinearLayout>
+
+        <!-- 真实姓名 -->
+        <LinearLayout
+            android:id="@+id/ll_realname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/realname"
+                android:textColor="@color/update_user_info_title_color"
+                android:textSize="@dimen/update_user_info_text_size" />
+
+            <EditText
+                android:id="@+id/et_realname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/update_user_info_content_color"
+                android:textSize="@dimen/update_user_info_text_size" />
+        </LinearLayout>
+
+        <!-- 性别 -->
+        <LinearLayout
+            android:id="@+id/ll_sex"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sex"
+                android:textColor="@color/update_user_info_title_color"
+                android:textSize="@dimen/update_user_info_text_size"/>
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rb_male"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="@string/male" />
+
+                <RadioButton
+                    android:id="@+id/rb_female"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="@string/female" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4" />
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <!-- 年级 -->
+        <LinearLayout
+            android:id="@+id/ll_nianji"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/nianji"
+                android:textColor="@color/update_user_info_title_color"
+                android:textSize="@dimen/update_user_info_text_size" />
+
+            <Spinner
+                android:id="@+id/sp_nianji"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/sp_nj" />
+
+        </LinearLayout>
+
+        <!-- 确定 -->
+        <Button
+            android:id="@+id/btn_submit"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginTop="@dimen/button_margin_top"
+            android:background="@drawable/bg_btn_enable_selector"
+            android:text="@string/ensure"
+            android:textColor="@color/title_text_color"
+            android:textSize="@dimen/button_text_size" />
+
+
+    </LinearLayout>
+
+</LinearLayout>

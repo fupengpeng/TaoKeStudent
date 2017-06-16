@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_recharge"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/theme_bg_color"
+    android:orientation="vertical">
+
+    <!-- 标题栏 -->
+    <include layout="@layout/title_activity" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- 余额 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/recharge_interval">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/remaining_balance"
+                android:textColor="@color/recharge_title_text_color"
+                android:textSize="@dimen/recharge_title_text_size" />
+
+            <TextView
+                android:id="@+id/tv_recharge_cash"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/recharge_cash_text_color"
+                android:textSize="@dimen/recharge_cash_text_size" />
+
+        </LinearLayout>
+
+        <!-- 选择充值金额 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/recharge_interval"
+            android:orientation="horizontal"
+            android:padding="@dimen/recharge_interval">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/select_recharge_amount"
+                android:textColor="@color/recharge_title_text_color"
+                android:textSize="@dimen/recharge_title_text_size" />
+
+            <Spinner
+                android:id="@+id/sp_recharge_amount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/sp_recharge" />
+
+        </LinearLayout>
+
+        <!-- 支付方式 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/recharge_interval"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp"
+                android:paddingStart="@dimen/recharge_interval"
+                android:text="@string/pay_method"
+                android:textColor="@color/recharge_title_text_color"
+                android:textSize="@dimen/recharge_title_text_size" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/bg_recharge_pay_method"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingEnd="@dimen/recharge_interval"
+                android:paddingStart="@dimen/recharge_interval">
+
+                <RadioButton
+                    android:id="@+id/rb_recharge_zfb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true" />
+
+                <ImageView
+                    android:id="@+id/iv_recharge_zfb"
+                    android:layout_width="@dimen/recharge_pay_method_icon_width"
+                    android:layout_height="@dimen/recharge_pay_method_icon_height"
+                    android:src="@drawable/zhifubao" />
+
+                <RadioButton
+                    android:id="@+id/rb_recharge_wx"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/recharge_interval" />
+
+                <ImageView
+                    android:id="@+id/iv_recharge_wx"
+                    android:layout_width="@dimen/recharge_pay_method_icon_width"
+                    android:layout_height="@dimen/recharge_pay_method_icon_height"
+                    android:src="@drawable/wexin" />
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <!-- 确认按钮 -->
+        <Button
+            android:id="@+id/btn_ensure"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginEnd="@dimen/recharge_interval"
+            android:layout_marginStart="@dimen/recharge_interval"
+            android:layout_marginTop="@dimen/button_margin_top"
+            android:background="@drawable/bg_btn_enable_selector"
+            android:text="@string/ensure"
+            android:textColor="@color/title_text_color"
+            android:textSize="@dimen/button_text_size" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="transparent">#00ffffff</color>
+
+    <!-- 通用 -->
+    <!-- 主题颜色 -->
+    <color name="theme_color">#21a675</color>
+    <color name="theme_bg_color">#F1F1F1</color>
+    <!-- 标题栏 -->
+    <color name="title_text_color">#FFFFFF</color>
+    <!-- 条目内容项 -->
+    <color name="sub_item_bg_color">#fafafa</color>
+    <color name="sub_item_text_color">#444444</color>
+    <!-- 分割线 -->
+    <color name="split_line_color">#E0E0E0</color>
+    <!-- 加载更多数据 -->
+    <color name="load_more_text_color">#999999</color>
+
+    <!-- 侧滑菜单 -->
+    <!-- 菜单项正常字体颜色 -->
+    <color name="text_menu_normal">#FFFFFF</color>
+    <!-- 菜单项选中字体颜色 -->
+    <color name="text_menu_select">#FFFFFF</color>
+    <!-- 菜单项正常背景颜色 -->
+    <color name="bg_menu_normal">#00FFFFFF</color>
+    <!-- 菜单项选中背景颜色 -->
+    <color name="bg_menu_select">#30FFFFFF</color>
+
+    <!-- 91条款 -->
+    <color name="term_91">#F15353</color>
+
+    <!-- 修改个人信息 -->
+    <color name="update_user_info_title_color">#444444</color>
+    <!-- 修改个人信息 -->
+    <color name="update_user_info_content_color">#000000</color>
+
+    <!-- 充值 -->
+    <color name="recharge_title_text_color">#444444</color>
+    <color name="recharge_cash_text_color">#FF8400</color>
+    <color name="bg_recharge_pay_method">#FFFFFF</color>
+
+    <!-- 微课视频模块 -->
+    <!-- 内容区域背景色 -->
+    <color name="bg_micro_content">#ffffff</color>
+    <!-- 底部tab item 背景 -->
+    <color name="bg_bottom_tab">#ffffff</color>
+    <!-- 底部tab item 正常字体颜色 -->
+    <color name="text_bottom_tab_item_normal">#666666</color>
+    <!-- 底部tab item 选中字体颜色 -->
+    <color name="text_bottom_tab_item_select">#21a675</color>
+    <!-- 微课视频/习题微课 tab item -->
+    <color name="text_micro_tab_item_normal">#ffffff</color>
+    <color name="text_micro_tab_item_select">#21a675</color>
+    <!-- 微课视频视频详情 tab item -->
+    <color name="text_micro_detail_tab_item_normal">#999999</color>
+
+
+
+
+
+
+
+
+
+
+
+
+</resources>

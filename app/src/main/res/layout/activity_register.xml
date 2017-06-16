@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_register"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/theme_bg_color"
+    android:orientation="vertical">
+
+    <!-- 标题栏 -->
+    <include layout="@layout/title_activity" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/account_info_interval"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical">
+
+        <!-- 注册信息 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/register_view_user_info_height"
+            android:background="@drawable/bg_registe_bottom_part"
+            android:orientation="vertical"
+            android:paddingEnd="@dimen/account_info_interval"
+            android:paddingStart="@dimen/account_info_interval">
+
+            <!-- 输入手机号 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/account_icon_size"
+                    android:layout_height="@dimen/account_icon_size"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_registe_cellphone_number" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/account_info_interval"
+                    android:orientation="vertical">
+
+                    <com.taoke.taokestudent.customerview.ClearEditText
+                        android:id="@+id/cet_register_cellphone_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:hint="@string/input_phone"
+                        android:inputType="number|phone"
+                        android:maxLength="11" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/line_seperate" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- 输入密码 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/account_icon_size"
+                    android:layout_height="@dimen/account_icon_size"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_registe_password" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/account_info_interval"
+                    android:orientation="vertical">
+
+                    <com.taoke.taokestudent.customerview.ClearEditText
+                        android:id="@+id/cet_register_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:hint="@string/input_password"
+                        android:inputType="textPassword" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/line_seperate" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- 再次输入密码 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/account_icon_size"
+                    android:layout_height="@dimen/account_icon_size"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_registe_password_confirm" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/account_info_interval"
+                    android:orientation="vertical">
+
+                    <com.taoke.taokestudent.customerview.ClearEditText
+                        android:id="@+id/cet_register_confirm_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:hint="@string/input_confirm_password"
+                        android:inputType="textPassword" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/line_seperate" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- 输入验证码 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/account_icon_size"
+                    android:layout_height="@dimen/account_icon_size"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_registe_validate_code" />
+
+                <com.taoke.taokestudent.customerview.ClearEditText
+                    android:id="@+id/cet_register_validate_code"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/account_info_interval"
+                    android:layout_marginRight="@dimen/account_info_interval"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:hint="@string/input_validate_code"
+                    android:inputType="number" />
+
+                <com.taoke.taokestudent.customerview.SendValidateButton
+                    android:id="@+id/svb_register_sand_validate"
+                    android:layout_width="@dimen/send_validate_button_width"
+                    android:layout_height="@dimen/button_height"
+                    android:background="@drawable/bg_register_send_validate_code"
+                    android:textColor="@color/title_text_color" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- 91注册条款 -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/account_info_interval"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/cb_term"
+                android:layout_width="@dimen/account_icon_size"
+                android:layout_height="@dimen/account_icon_size"
+                android:background="@drawable/check_box_circle"
+                android:button="@null"
+                android:checked="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="@string/read_and_agree" />
+
+            <TextView
+                android:id="@+id/tv_term_91"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/term_91"
+                android:textColor="@color/term_91" />
+
+        </LinearLayout>
+
+        <!-- 注册按钮 -->
+        <Button
+            android:id="@+id/btn_register"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginTop="@dimen/button_margin_top"
+            android:background="@drawable/bg_btn_unable"
+            android:enabled="false"
+            android:text="@string/register"
+            android:textColor="@color/title_text_color"
+            android:textSize="@dimen/button_text_size" />
+    </LinearLayout>
+
+
+</LinearLayout>

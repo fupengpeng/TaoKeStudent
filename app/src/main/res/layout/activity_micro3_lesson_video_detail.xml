@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_micro3_lesson_video_detail"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- 标题栏 -->
+    <RelativeLayout
+        android:id="@+id/rl_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_bar_activity_height"
+        android:background="@color/theme_color"
+        android:gravity="center_vertical"
+        android:paddingTop="@dimen/title_bar_activity_padding_top">
+
+        <!-- 返回 -->
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="@dimen/back_icon_width"
+            android:layout_height="@dimen/back_icon_height"
+            android:layout_centerVertical="true"
+            android:paddingEnd="@dimen/title_edge_interval"
+            android:paddingStart="@dimen/title_edge_interval"
+            android:src="@drawable/arrow_left_white" />
+
+        <!-- 标题 -->
+        <TextView
+            android:id="@+id/tv_title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:layout_centerInParent="true"
+            android:textColor="@color/title_text_color"
+            android:textSize="@dimen/title_text_size" />
+
+        <!-- 下载 -->
+        <ImageView
+            android:id="@+id/iv_title_download"
+            android:layout_width="30dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/title_edge_interval"
+            android:src="@drawable/download_icon" />
+    </RelativeLayout>
+
+    <!-- 视频播放器 -->
+    <FrameLayout
+        android:id="@+id/video_layout"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@android:color/black">
+
+        <com.universalvideoview.UniversalVideoView
+            android:id="@+id/videoView"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            app:uvv_autoRotation="true"
+            app:uvv_fitXY="false" />
+
+        <com.universalvideoview.UniversalMediaController
+            android:id="@+id/media_controller"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            app:uvv_scalable="true" />
+
+    </FrameLayout>
+
+    <!-- 课程综述 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#222222">
+
+        <TextView
+            android:id="@+id/tv_micro_3_detail_clanum"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textColor="#ffffff" />
+
+        <TextView
+            android:id="@+id/tv_micro_3_detail_price"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textColor="#ffffff" />
+
+        <LinearLayout
+            android:id="@+id/ll_micro_3_detail_free_download"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/download_icon2" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="下载"
+                android:textColor="#ffffff"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_micro_3_detail_charge_buy"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/iv_micro_3_detail_charge_buy_icon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/buy_icon" />
+
+            <TextView
+                android:id="@+id/tv_micro_3_detail_charge_buy_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:textColor="#ffffff"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <!-- 主体内容 -->
+    <FrameLayout
+        android:id="@+id/fl_micro_3_detail_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <!-- 导航栏 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+
+        <com.taoke.taokestudent.customerview.SimpleTabView
+            android:id="@+id/stv_micro_3_detail_free"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <com.taoke.taokestudent.customerview.SimpleTabView
+            android:id="@+id/stv_micro_3_detail_charge"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+
+</LinearLayout>

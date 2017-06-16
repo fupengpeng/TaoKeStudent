@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/title_bar_activity_height"
+    android:background="@color/theme_color"
+    android:gravity="center_vertical"
+    android:paddingTop="@dimen/title_bar_activity_padding_top">
+
+    <!-- 返回 -->
+    <ImageView
+        android:id="@+id/iv_back"
+        android:layout_width="@dimen/back_icon_width"
+        android:layout_height="@dimen/back_icon_height"
+        android:layout_centerVertical="true"
+        android:paddingEnd="@dimen/title_edge_interval"
+        android:paddingStart="@dimen/title_edge_interval"
+        android:src="@drawable/arrow_left_white" />
+
+    <!-- 标题 -->
+    <TextView
+        android:id="@+id/tv_title_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textColor="@color/title_text_color"
+        android:textSize="@dimen/title_text_size" />
+
+    <!-- 右侧文本 -->
+    <TextView
+        android:id="@+id/tv_title_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:paddingEnd="@dimen/title_edge_interval"
+        android:paddingStart="@dimen/title_edge_interval"
+        android:textColor="@color/title_text_color"
+        android:textSize="@dimen/title_text_size"
+        android:visibility="gone" />
+</RelativeLayout>

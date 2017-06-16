@@ -1,0 +1,48 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.neenbedankt.android-apt'
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion "24.0.1"
+    defaultConfig {
+        applicationId "com.taoke.taokestudent"
+        minSdkVersion 19
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:24.2.1'
+    testCompile 'junit:junit:4.12'
+    compile 'com.jakewharton:butterknife:8.1.0'
+    apt 'com.jakewharton:butterknife-compiler:8.1.0'
+    compile files('libs/nineoldandroids-2.4.0.jar')
+    compile files('libs/nohttp1.0.7.jar')
+    compile files('libs/fastjson-1.1.54.android.jar')
+    compile files('libs/eventbus-3.0.0.jar')
+    apt 'org.greenrobot:eventbus-annotation-processor:3.0.1'
+    compile files('libs/picasso-2.5.2.jar')
+    compile files('libs/alipaySdk-20160825.jar')
+    compile 'com.github.satyan:sugar:1.5'
+    compile 'com.linsea:universalvideoview:1.1.0@aar'
+    compile files('libs/chunk-templates-3.0.1.jar')
+}
+
+apt {
+    arguments {
+        eventBusIndex "com.taoke.taokestudent.MyEventBusIndex"
+    }
+}
